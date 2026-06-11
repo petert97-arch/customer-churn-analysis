@@ -22,6 +22,7 @@ GROUP BY dim_customer.customer_name;
 
 
 
+-- Purpose: Structured raw sales data into dimension and fact tables using SQL to support customer churn analysis and business intelligence reporting.
 
 
 CREATE OR REPLACE TABLE dim_customer AS 
