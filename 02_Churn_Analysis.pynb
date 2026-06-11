@@ -1,0 +1,35 @@
+-- Purpose: Analyze customer churn behavior by identifying churn status,  evaluating total revenue impact, and examining customer spending patterns.
+
+
+
+
+
+df[df["DAYS_SINCE_LAST_PURCHASE"] > 90]
+  
+
+df[df["CHURN_STATUS"] == "Churned"]["TOTAL_REVENUE"].sum()
+  
+
+churn_rate = (
+    (df["CHURN_STATUS"] == "Churned").mean()
+) * 100
+
+
+print(churn_rate)
+
+
+df.groupby("CHURN_STATUS")["TOTAL_ORDERS"].mean()
+
+
+df.sort_values(
+    "DAYS_SINCE_LAST_PURCHASE",
+    ascending=False
+).head(10)
+
+
+df[
+    (df["CHURN_STATUS"] == "Churned")
+].sort_values(
+    "TOTAL_REVENUE",
+    ascending=False
+)
