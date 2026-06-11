@@ -1,0 +1,14 @@
+--Purpose: Load customer churn data into Python and perform  data inspection to understand data structure
+
+
+import pandas as pd
+
+df = pd.read_csv(r"C:\Users\Owner\Downloads\SalesDB_2026-05-07-1000.csv")
+
+df.head()
+
+df.info()
+
+df.columns
+
+df.describe()
